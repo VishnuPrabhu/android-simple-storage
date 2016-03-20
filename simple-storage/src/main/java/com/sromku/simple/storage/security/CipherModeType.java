@@ -15,7 +15,12 @@ public enum CipherModeType {
 	/**
 	 * Electronic Codebook Mode
 	 */
-	ECB("ECB");
+	ECB("ECB"),
+
+	/**
+	 * Counter Mode Mode
+	 */
+	CTR("CTR");
 
 	private String mName;
 

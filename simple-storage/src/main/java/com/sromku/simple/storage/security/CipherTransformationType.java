@@ -35,6 +35,8 @@ public class CipherTransformationType {
 	public static final String AES_CBC_PKCS5Padding = CipherAlgorithmType.AES + _ + CipherModeType.CBC + _ + CipherPaddingType.PKCS5Padding;
 	public static final String AES_ECB_NoPadding = CipherAlgorithmType.AES + _ + CipherModeType.ECB + _ + CipherPaddingType.NoPadding;
 	public static final String AES_ECB_PKCS5Padding = CipherAlgorithmType.AES + _ + CipherModeType.ECB + _ + CipherPaddingType.PKCS5Padding;
+	public static final String AES_CTR_NoPadding = CipherAlgorithmType.AES + _ + CipherModeType.CTR + _ + CipherPaddingType.NoPadding;
+
 
 	public static final String DES_CBC_NoPadding = CipherAlgorithmType.DES + _ + CipherModeType.CBC + _ + CipherPaddingType.NoPadding;
 	public static final String DES_CBC_PKCS5Padding = CipherAlgorithmType.DES + _ + CipherModeType.CBC + _ + CipherPaddingType.PKCS5Padding;
