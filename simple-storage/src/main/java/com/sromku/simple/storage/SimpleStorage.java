@@ -17,6 +17,7 @@ public class SimpleStorage {
 
 	private static InternalStorage mInternalStorage = null;
 	private static ExternalStorage mExternalStorage = null;
+	private static ExternalFileStorage mExternalFileStorage = null;
 
 	private static SimpleStorage mInstance = null;
 	private static SimpleStorageConfiguration mSimpleStorageConfiguration;
@@ -27,6 +28,7 @@ public class SimpleStorage {
 
 		mInternalStorage = new InternalStorage();
 		mExternalStorage = new ExternalStorage();
+		mExternalFileStorage = new ExternalFileStorage();
 	}
 
 	private static SimpleStorage init() {
@@ -42,6 +44,7 @@ public class SimpleStorage {
 	 * <ul>
 	 * <li>{@link StorageType#INTERNAL}</li>
 	 * <li>{@link StorageType#EXTERNAL}</li>
+	 * <li>{@link StorageType#EXTERNAL_CACHE}</li>
 	 * </ul>
 	 * 
 	 * @author sromku
@@ -49,7 +52,8 @@ public class SimpleStorage {
 	 */
 	public enum StorageType {
 		INTERNAL,
-		EXTERNAL
+		EXTERNAL,
+		EXTERNAL_FILE
 	}
 
 	/**
@@ -80,12 +84,22 @@ public class SimpleStorage {
 
 	/**
 	 * Get external storage. <br>
-	 * 
+	 *
 	 * @return {@link ExternalStorage}
 	 */
 	public static ExternalStorage getExternalStorage() {
 		init();
 		return mExternalStorage;
+	}
+
+	/**
+	 * Get external file storage. <br>
+	 *
+	 * @return {@link ExternalFileStorage}
+	 */
+	public static ExternalFileStorage getExternalFileStorage() {
+		init();
+		return mExternalFileStorage;
 	}
 
 	/**
@@ -97,6 +111,17 @@ public class SimpleStorage {
 	public static boolean isExternalStorageWritable() {
 		init();
 		return mExternalStorage.isWritable();
+	}
+
+	/**
+	 * Check whereas the external file storage is writable. <br>
+	 *
+	 * @return <code>True</code> if external storage writable, otherwise return
+	 *         <code>False</code>
+	 */
+	public static boolean isExternalFileStorageWritable() {
+		init();
+		return mExternalFileStorage.isWritable();
 	}
 
 	public static SimpleStorageConfiguration getConfiguration() {
